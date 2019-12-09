@@ -1,13 +1,14 @@
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
+    if len(arr) < 2:
+        return arr
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
         for j in range(cur_index, len(arr)):
-#            print('j',j,'arr[j]',arr[j])
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
              
@@ -18,13 +19,11 @@ def selection_sort( arr ):
         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
 
-    print('it',arr)
     return arr
-# print(selection_sort( [3,2,5,7,99,66,44,55,2]))
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    if len(arr) == 0:
+    if len(arr) < 2:
         return arr
     d = True
     while d:
@@ -35,10 +34,25 @@ def bubble_sort( arr ):
                 arr[i], arr[i - 1] = arr[i - 1], arr[i]
                 d = True
     return arr
-#print(bubble_sort( [3,59,97,5,83,46,7,99,66,44,55,2]))
 
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
-    return arr
+    if maximum < 0:
+        maximum = 65535
+    count =[]
+    o = []
+    for i in range(0, maximum):
+        count.append(-1)
+    for key in arr:
+        if key < 0:
+            return "Error, negative numbers not allowed in Count Sort"    
+        try:
+            count[key] = key
+        except:
+            return "Error, negative numbers not allowed in Count Sort"    
+    for i in count:
+        if i != -1:
+            o.append(i)
+            
+    return o
