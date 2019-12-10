@@ -56,4 +56,3 @@ def count_sort( arr, maximum=-1 ):
             for j in range(0, count[i] + 1):
                 arr.append(i)
     return arr
-print(count_sort([2,2,2,1,1,1,5,6,7,5,6,7,8,9,8,7,6,54,3]))
