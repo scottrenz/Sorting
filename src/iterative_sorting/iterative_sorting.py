@@ -43,7 +43,6 @@ def count_sort( arr, maximum=-1 ):
     else:
         maximum +=1    
     count =[]
-    o = []
     for i in range(0, maximum):
         count.append(-1)
     for key in arr:
