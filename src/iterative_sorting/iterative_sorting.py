@@ -54,5 +54,5 @@ def count_sort( arr, maximum=-1 ):
     for i in count:
         if i != -1:
             o.append(i)
-            
-    return o
+    arr = o               
+    return arr
