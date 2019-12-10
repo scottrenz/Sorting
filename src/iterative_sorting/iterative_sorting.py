@@ -51,8 +51,8 @@ def count_sort( arr, maximum=-1 ):
             count[key] = key
         except:
             return "Error, negative numbers not allowed in Count Sort"    
+    arr = []
     for i in count:
         if i != -1:
-            o.append(i)
-    arr = o               
+            arr.append(i)
     return arr
