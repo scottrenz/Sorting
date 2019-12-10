@@ -40,6 +40,8 @@ def bubble_sort( arr ):
 def count_sort( arr, maximum=-1 ):
     if maximum < 0:
         maximum = 65535
+    else:
+        maximum +=1    
     count =[]
     o = []
     for i in range(0, maximum):
@@ -47,12 +49,11 @@ def count_sort( arr, maximum=-1 ):
     for key in arr:
         if key < 0:
             return "Error, negative numbers not allowed in Count Sort"    
-        try:
-            count[key] = key
-        except:
-            return "Error, negative numbers not allowed in Count Sort"    
+        count[key] +=1
     arr = []
-    for i in count:
-        if i != -1:
-            arr.append(i)
+    for i in range(0, maximum):
+        if count[i] != -1:
+            for j in range(0, count[i] + 1):
+                arr.append(i)
     return arr
+print(count_sort([2,2,2,1,1,1,5,6,7,5,6,7,8,9,8,7,6,54,3]))
