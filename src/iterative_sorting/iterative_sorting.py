@@ -39,7 +39,7 @@ def bubble_sort( arr ):
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
     if maximum < 0:
-        maximum = 65535
+        maximum = max(arr) + 1
     else:
         maximum +=1    
     count =[]

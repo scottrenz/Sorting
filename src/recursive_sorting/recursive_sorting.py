@@ -42,7 +42,7 @@ def merge_sort( arr ):
     right =merge_sort(right)
     arr = merge(left,right)
     return arr
-print(merge_sort([99,8,3,88,1,4,5,7,43,9,2]))
+print(merge_sort([99,8,3,88,1,0,4,5,7,43,9,2]))
 
 
 # STRETCH: implement an in-place merge sort algorithm
